@@ -175,9 +175,6 @@ data.isna().sum()
 data[data.isnull().any(axis=1)]
 
 
-# In[184]:
-
-
 # NaN treatment
 
 for col in cat_cols:
@@ -369,8 +366,6 @@ for col in num_cols:
     plt.show()
 
 
-# In[198]:
-
 
 for col in num_cols:
     data.plot.scatter(x=col, y=target_var)
@@ -382,8 +377,6 @@ for col in num_cols:
 # ## 2.6 Dummy Coding - only for Categorical features
 # process of coding a categorical variable into dichotomous variables ie variable with only two possible values
 
-# In[199]:
-
 
 # Dummy encoding, include target_var as well
 for x in cat_cols:
@@ -391,8 +384,6 @@ for x in cat_cols:
         #continue
     data[x] = pd.Categorical(data[x]).codes
 
-
-# In[200]:
 
 
 d1 = data.where(data['foreign_worker']=='Yes')
@@ -561,9 +552,9 @@ res_1 = logit.execute_logit('model improvement/feature selection')
 
 
 
-# dt = DecisionTree(target_var, X,y)
+dt = DecisionTree(target_var, X,y)
 
-# dt.execute_decision_tree(scld_df)
+dt.execute_decision_tree(scld_df)
 
 
 
